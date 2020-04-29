@@ -24,6 +24,7 @@ function updateStats(state, newState) {
     carstats: calculateStats(newState),
   };
 }
+
 function calculateStats(state) {
   const models = ['60', '60D', '75', '75D', '90D', 'P100D'];
   const dataModels = getModelData();
@@ -48,6 +49,18 @@ function appReducer(state = initialState, action) {
         config: {
           climate: !state.config.climate,
           speed: state.config.speed,
+          temperature: state.config.temperature,
+          wheels: state.config.wheels,
+        },
+      };
+      return updateStats(state, newState);
+    }
+    case 'SPEED_UP': {
+      const newState = {
+        ...state,
+        config: {
+          climate: state.config.climate,
+          speed: action.value + action.step,
           temperature: state.config.temperature,
           wheels: state.config.wheels,
         },
