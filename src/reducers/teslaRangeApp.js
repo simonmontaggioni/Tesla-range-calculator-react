@@ -1,7 +1,7 @@
 import { getModelData } from '../services/BatteryService';
 
 const initialState = {
-  carstats: [
+  carStats: [
     { miles: 246, model: '60' },
     { miles: 250, model: '60D' },
     { miles: 297, model: '75' },

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'react';
 import './TeslaStats.css';
 
 const TeslaStats = (props) => {
@@ -15,6 +16,10 @@ const TeslaStats = (props) => {
       <ul>{listItems}</ul>
     </div>
   );
+};
+
+TeslaStats.propTypes = {
+  carStats: PropTypes.array,
 };
 
 export default TeslaStats;
